@@ -1,0 +1,47 @@
+<form [formGroup]="createPatientForm" (ngSubmit)="onClickSubmit()" >
+<table>
+  <tr>
+    <td class="label" >Username</td>
+    <td><input formControlName="patientName" type="text" placeholder="username" name="patientName"/></td>
+  </tr>
+  <tr>
+    <td *ngIf="submitted && createPatientForm.controls.patientName.errors.required" class="error">*Username is required.</td>
+  </tr>
+  <tr>
+    <td class="label" >Password</td>
+    <td><input formControlName="password" type="password" placeholder="password" name="password"/></td>
+  </tr>
+  <tr>
+    <div>
+    <td *ngIf="submitted && createPatientForm.controls.password.errors.required" class="error">*Password is required.</td>
+    <td *ngIf="submitted && createPatientForm.controls.password.errors.invalidPassword" class="error">*Password must end with '@123'</td>
+  </div>
+  </tr>
+  <tr>
+    <td class="label" >Account Number</td>
+    <td><input formControlName="accountNumber" type="text" placeholder="account number" name="accountNumber"/></td>
+  </tr>
+  <tr>
+    <td *ngIf="submitted && createPatientForm.controls.accountNumber.errors.required" class="error">*Account Number is required.</td>
+  </tr>
+  <tr>
+    <td class="label" >Bank</td>
+    <td><input formControlName="bankName" type="text" placeholder="name of bank" name="bankName"/></td>
+  </tr>
+  <tr>
+    <td *ngIf="submitted && createPatientForm.controls.bankName.errors.required" class="error">*Bank Name is required.</td>
+  </tr>
+  <tr>
+    <td class="label" >Joining Date</td>
+    <td><input formControlName="joiningDate" type="date" placeholder="joining date" name="joiningDate"/></td>
+  </tr>
+  <tr>
+    <td *ngIf="submitted && createPatientForm.controls.joiningDate.errors.required" class="error">*Joining Date is required.</td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <button type="submit"> Create Patient</button>
+    </td>
+  </tr>
+</table>
+</form>

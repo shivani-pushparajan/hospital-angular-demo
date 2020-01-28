@@ -1,0 +1,27 @@
+<div id="container" >
+<button type="button" (click)="Patient()">Patient</button>
+<button type="button" (click)="Doctor()">Doctor</button>
+<div class="details" *ngIf="showPatient">
+    <ul>
+    <li *ngFor="let patient of patients">    
+    Patient Name : {{patient.patientName}} <br>
+    Patient Id   : {{patient.patientId}}<br>
+    Disease      :   {{patient.disease}}
+    </li>
+    </ul>
+
+</div>
+<div class="details" *ngIf="showDoctor">
+   
+        <ul>
+        <li *ngFor="let doctor of doctors">    
+        Doctor Name : {{doctor.doctorName}} <br>
+        Doctor Id   : {{doctor.doctorId}}<br>
+        Specialisation      :   {{doctor.specialisation}}
+        </li>
+        </ul>
+    
+    
+
+</div>
+</div  >

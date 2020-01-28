@@ -1,0 +1,19 @@
+<div>
+    <button (click)="getAllPatients()">Get Patient List</button>
+    <table>
+        <tr *ngIf="show">
+            <th>ID</th>
+            <th>Name</th>
+            <th>Account Number</th>
+            <th>Joining Date</th>
+        </tr>
+    <tr *ngFor ="let data of patients">
+        <td>{{data.patientId}}</td>
+        <td><input value={{data.patientName}} #patientName/></td>
+        <td>{{data.accountNumber}}</td>
+        <td><input value={{data.joiningDate}} #joiningDate/></td>
+        <td><button id="deletebtn" (click)="deletePatient(data.patientId)">Delete</button></td>
+        <td><button id="updatebtn" (click)="updatePatient(data.patientId,patientName.value,data.password)">Edit</button></td>
+    </tr>
+    </table>
+</div>

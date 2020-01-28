@@ -1,0 +1,46 @@
+<table>
+    <tr>
+        <td class="label" >ID</td>
+        <td><input #id type="text" placeholder="id required" required/></td>
+      </tr>
+    <tr>
+      <td class="label" >Username</td>
+      <td><input #username type="text" placeholder="username"/></td>
+    </tr>
+    <tr>
+      <td class="label" >Password</td>
+      <td><input #password type="password" placeholder="password"/></td>
+    </tr>
+    <tr>
+      <td class="label" >Account Number</td>
+      <td><input #account_number type="text" placeholder="account number"/></td>
+    </tr>
+    <tr>
+      <td class="label" >Bank</td>
+      <td><input #bank type="text" placeholder="name of bank"/></td>
+    </tr>
+    <tr>
+      <td class="label" >Joining Date</td>
+      <td><input #joining_date type="date" placeholder="joining date"/></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <button
+          type="button"
+          (click)="
+            onClickSubmit(
+              id.value,
+              username.value,
+              password.value,
+              account_number.value,
+              bank.value,
+              joining_date.value
+            )
+          "
+        >
+          Update Patient
+        </button>
+      </td>
+    </tr>
+  </table>
+  
